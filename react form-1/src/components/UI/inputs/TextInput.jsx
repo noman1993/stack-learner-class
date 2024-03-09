@@ -1,15 +1,16 @@
 import styled from "styled-components";
 
 const TextInput = styled.input`
-  outline: none;
-  border: 1px solid #232323;
-  border-radius: 5px;
-  padding: 10px;
   width: 100%;
+  border: ${(props) =>
+    props.error ? "2px solid #ff0000" : "1px solid #232323"};
+  outline: none;
+  padding: 0.25rem 0.5rem;
   background: transparent;
-  fontsize: 1.2rem;
+  font-size: 0.9rem;
+  font-family: Arial;
   color: #333;
-  &: focus {
+  &:focus {
     border: 2px solid skyblue;
   }
 `;

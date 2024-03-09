@@ -1,12 +1,11 @@
 import styled from "styled-components";
-
-import TextInput from "../../inputs/TextInput";
-import Label from "../../label/Label";
+import Label from "../../UI/inputs/Label";
+import TextInput from "../../UI/inputs/TextInput";
 
 const Container = styled.div`
   width: 100%;
   padding: 1rem;
-  border: 1px solid #elelel;
+  border: 1px solid #e1e1e1;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -22,8 +21,8 @@ const InputGroup = ({
   name,
   value,
   placeholder,
-  onChange,
   error,
+  onChange,
   onFocus,
   onBlur,
 }) => {
@@ -33,12 +32,13 @@ const InputGroup = ({
       <TextInput
         name={name}
         id={name}
-        placeholder={placeholder}
+        placeholder={placeholder ?? ""}
         value={value}
         onChange={onChange}
         onFocus={onFocus}
         onBlur={onBlur}
-      />{" "}
+        error={error}
+      />
       {error && <ErrorMessage>{error}</ErrorMessage>}
     </Container>
   );
